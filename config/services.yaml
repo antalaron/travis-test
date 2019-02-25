@@ -1,0 +1,15 @@
+parameters:
+    locale: 'en'
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    Antalaron\TravisTest\:
+        resource: '../src/*'
+        exclude: '../src/{DependencyInjection,Entity,Migrations,Tests,Kernel.php}'
+
+    Antalaron\TravisTest\Controller\:
+        resource: '../src/Controller'
+        tags: ['controller.service_arguments']
